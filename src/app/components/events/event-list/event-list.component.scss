@@ -1,0 +1,80 @@
+mat-card {
+  background-color: rgba(0, 0, 0, .04);;
+  margin: 10px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center !important;
+}
+
+.mat-raised-button {
+  min-width: 101px;
+  height: 50px;
+}
+
+.mat-form-field-infix ng-tns-c68-0 {
+  padding: 0 !important;
+}
+
+.custom-height {
+  height: 50px;
+}
+
+.custom-height .mat-form-field-wrapper {
+  height: 100%;
+}
+
+.custom-height input {
+  height: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.mat-button {
+  text-align: justify;
+}
+
+.list-card {
+  display: flex;
+  justify-content: space-between;
+
+  .list-details {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #263238	;
+  }
+
+  .list-action {
+    display: grid;
+  }
+}
+.mat-paginator{
+  background-color:#E0F7FA;
+}
+/* Styles for header title */
+.header-title {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: #ffffff;
+}
+
+/* Styles for add button */
+.add-button {
+  background-color: #2ECC71;
+}
+
+/* Styles for toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Styles for list action buttons */
+.list-action {
+  display: grid;
+  gap: 1rem;
+}

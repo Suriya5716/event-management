@@ -1,0 +1,49 @@
+<div>
+  <!-- Toolbar Section -->
+  <mat-toolbar class="custom-header">
+    <span class="header-title">Upcoming Events</span>
+    <span class="spacer"></span>
+  </mat-toolbar>
+
+  <!-- Add and Search Section -->
+  <div class="toolbar">
+    <button mat-raised-button class="add-button" (click)="addeditEvent('add')">Add</button>
+    <mat-form-field appearance="outline" class="custom-height">
+      <mat-label>Search</mat-label>
+      <input matInput [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange()" placeholder="Title or location" />
+    </mat-form-field>
+  </div>
+
+  <!-- Event List -->
+  <div *ngIf="pagedEvents?.length > 0">
+    <mat-card class="list-card" *ngFor="let event of pagedEvents">
+      <div>
+        <mat-card-title class="list-details" (click)="redirecttoDetails(event.id)">{{ event.title }}</mat-card-title>
+        <mat-card-subtitle>{{ event.date }} - {{ event.location }}</mat-card-subtitle>
+        <p>{{ event.description }}</p>
+      </div>
+      <div class="list-action">
+        <button mat-button color="warn" (click)="deleteEvent(event.id)">
+          <mat-icon>delete</mat-icon>
+          Delete
+        </button>
+        <button mat-button color="blue" (click)="addeditEvent('edit', event.id)">
+          <mat-icon>edit</mat-icon>
+          Edit
+        </button>
+      </div>
+    </mat-card>
+  </div>
+  
+  <!-- No Events Message -->
+  <div *ngIf="pagedEvents?.length === 0">
+    <p>No events found.</p>
+  </div>
+
+  <!-- Pagination Section -->
+  <mat-paginator [length]="filteredEvents().length"
+                 [pageSize]="5"
+                 [pageSizeOptions]="[10]"
+                 (page)="onPageChanged($event)">
+  </mat-paginator>
+</div>

@@ -1,0 +1,38 @@
+.form-container {
+    max-width: 90%;
+    margin: auto;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .form-field {
+    flex: 1 1 300px; /* responsive: min 300px width, expands as needed */
+    min-height: 70px; /* control consistent height */
+  }
+  
+  /* Optional: make inputs inside form fields same height */
+  .form-field .mat-input-element {
+    height: 40px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .add-editbtn{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+  }
+  .btn-bg{
+    background-color: black;
+    color: #ffff;
+  }
+  .save-btn{
+    background-color: #2ECC71;    
+    color: #ffff;
+  }
+  

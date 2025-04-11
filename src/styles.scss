@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+app-event-list{
+    width: 80%;
+    margin-top: 30px;
+    height: 100%;
+}
+app-event-form,app-event-detail{
+    align-items: center;
+    display: flex;
+}
+.custom-header{
+    margin: 10px;
+    background-color: #0F0F19;
+}
+router-outlet {
+    height: 100%;
+  }
+

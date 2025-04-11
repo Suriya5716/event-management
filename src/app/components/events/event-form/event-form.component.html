@@ -1,0 +1,48 @@
+<mat-toolbar class="custom-header" >
+  <span style="display: flex; width: 100%; justify-content: center; color: #ffffff	;">{{pageTitle}}</span>
+  <span class="spacer"></span>
+</mat-toolbar>
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()" class="form-container">
+  <div class="form-row">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" required />
+      <mat-error *ngIf="eventForm.get('title')?.hasError('required')">
+        Title is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Date</mat-label>
+      <input matInput type="date" formControlName="date" required />
+      <mat-error *ngIf="eventForm.get('date')?.hasError('required')">
+        Date is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Location</mat-label>
+      <input matInput formControlName="location" required />
+      <mat-error *ngIf="eventForm.get('location')?.hasError('required')">
+        Location is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Description</mat-label>
+      <textarea matInput rows="3" formControlName="description"></textarea>
+      <mat-error *ngIf="eventForm.get('description')?.hasError('required')">
+        Description is required.
+      </mat-error>
+      <mat-error *ngIf="eventForm.get('description')?.hasError('maxlength')">
+        Description can't be more than 500 characters.
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="add-editbtn">
+    <button mat-raised-button class="btn-bg"  type="button" (click)="redirecttolist()" >Back</button>
+    <button mat-raised-button class="save-btn" type="submit" [disabled]="eventForm.invalid">Save</button>
+  </div>
+</form>
+

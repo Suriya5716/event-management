@@ -1,0 +1,25 @@
+<ng-container *ngIf="!isLoading; else loading">
+    <ng-container *ngIf="event; else notFound">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ event.title }}</mat-card-title>
+          <mat-card-subtitle>{{ event.date | date:'fullDate' }} - {{ event.location }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ event.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary" (click)="goBack()">Back to Events</button>
+        </mat-card-actions>
+      </mat-card>
+    </ng-container>
+  </ng-container>
+  
+  <ng-template #loading>
+    <p>Loading event details...</p>
+  </ng-template>
+  
+  <ng-template #notFound>
+    <p>Event not found.</p>
+  </ng-template>
+  
